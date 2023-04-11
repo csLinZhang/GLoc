@@ -1,4 +1,4 @@
-### Ct-LVI: A Framework Towards Continuous-time Laser-Visual-Inertial Odometry and Mapping
+### Global Localization in Large-scale Point Clouds via Roll-pitch-yaw Invariant Place Recognition and Low-overlap Global Registration
 
 Zhong Wang<sup>1</sup>, Lin Zhang<sup>1</sup>, Shengjie Zhao<sup>1</sup>, and Yicong Zhou<sup>2</sup>
 
@@ -8,18 +8,13 @@ Zhong Wang<sup>1</sup>, Lin Zhang<sup>1</sup>, Shengjie Zhao<sup>1</sup>, and Yi
 
 #### Introduction
 
->  This is the website for our paper "Ct-LVI: A Framework Towards Continuous-time Laser-Visual-Inertial Odometry and Mapping".
+>  This is the website for our paper "Global Localization in Large-scale Point Clouds via Roll-pitch-yaw Invariant Place Recognition and Low-overlap Global Registration".
 
 ![Framework](framework.png)
 
-<center style="color:#C0C0C0;text-decoration:underline">Figure 1. (a) Self-developed handheld device. (b) The framework of Ct-LVI: “Preprocessing” produces synchronized and de-skewed point clouds, roughly fitted trajectory, and tracked visual features; “Front-end” conducts continuous-time laser-visual-inertial odometry; and “Backend” eliminates drifts via laser-visual fused loop detection and constraint construction, as well as global pose graph adjustment.</center>
+<center style="color:#C0C0C0;text-decoration:underline">Figure 1. (a) Overview of our approach. In offline training, sampled query-positive-negative triples are aligned to the ground to obtain projection parameters. With these parameters, 2D occupation grids are projected from the 3D occupancy voxels. Such 2D grids are further fed into a deep encoder and NetVLAD layers to aggregate place embeddings, which are used to update the search tree and network under the supervision of triplet loss. In the online localization, the query obtains place embedding as the triples in training and employs it to retrieve the response and the corresponding occupancy grids from the database. At last, by estimating the transformation between the 2D grids and combining the projection parameters, the complete 6-DoF pose can be restored.</center>
 
 #### Source Codes
 
-[Ct-LVI Codes](code.zip)
+[GLoc Codes](scan-to-scan.zip)
 
-#### Demo Video
-
-> The following demo video shows the functionality and demonstrates the performance of our Ct-LVI.
-
-<video id="v1" controls="" src="Video.mp4" preload="true">
