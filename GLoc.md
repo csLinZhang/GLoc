@@ -20,4 +20,4 @@ Zhong Wang<sup>1</sup>, Lin Zhang<sup>1</sup>, Shengjie Zhao<sup>1</sup>, and Yi
 
 #### Source Codes
 
-[GLoc Codes](GLoc3D.zip)
+[GLoc Codes](https://github.com/peterWon/GLoc3D)
